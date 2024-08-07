@@ -84,8 +84,8 @@ const Team = () => {
           "& .name-column--cell": {
             color: colors.greenAccent[300],
           },
-          // 왜 적용 안되지?? 헤더가 파란색이 안됨..
-          "& .MuiDataGrid-columnHeaders": {
+          // 색상이 변경되지 않음. columnHeaders에서 s를 빼야함.
+          "& .MuiDataGrid-columnHeader": {
             backgroundColor: colors.blueAccent[700],
             borderBottom: "none",
           },
