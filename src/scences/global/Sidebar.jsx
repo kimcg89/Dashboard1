@@ -35,11 +35,17 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
+
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
+
+  // 현재 테마 모드에 따라 로고 이미지 선택
+  const logoSrc = theme.palette.mode === 'dark' 
+  ? '../../assets/mesa_logo_white.png'
+  : '../../assets/mesa_logo.png';
 
   return (
     <Box
@@ -96,7 +102,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/mesa_logo.png`}
+                  src={logoSrc}
                   style={{ cursor: "pointer", borderRadius: "5%" }}
                 />
               </Box>
